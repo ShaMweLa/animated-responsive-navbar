@@ -1,0 +1,75 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Fira Code;
+}
+
+nav {
+  height: 10vh; /* FULL HEIGHT IS 100vh */
+  background: teal;
+}
+
+.nav-links {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  list-style: none; /* REMOVES THOSE DOTS */
+  justify-content: space-around;
+  align-items: center; /* ALIGN VERTICALLY */
+  margin-left: auto; /* TO MOVE TO THE RIGHT */
+}
+
+.nav-anchors {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.landing {
+  height: 90vh; /* remaining height */
+  display: flex;
+  justify-content: center; /* align horizontally */
+  align-items: center; /* align vertically */
+}
+
+.landing h1 {
+  margin: 100px;
+  font-size: 50px;
+  color: violet;
+}
+
+/* for devices with 768px max-width */
+@media screen and (max-width: 768px) {
+  /* for hamburger menu */
+  .line {
+    width: 30px;
+    height: 3px;
+    background: white;
+    margin: 5px;
+  }
+
+  nav {
+    position: relative;
+  }
+
+  .hamburger {
+    position: absolute;
+    right: 5%; /* 5% from right */
+    top: 50%; /* 50% from top */
+    transform: translate(-5%, -50%); /* to center perfectly */
+    cursor: pointer; /* to be clickable */
+  }
+
+  .nav-links {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    background: teal;
+    display: none;
+  }
+}
