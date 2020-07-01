@@ -58,37 +58,33 @@ nav {
 
   .hamburger {
     position: absolute;
+    right: 5%;
+    top: 50%;
     cursor: pointer; /* to be clickable */
-    right: 5%; /* 5% from right */
-    top: 50%; /* 50% from top */
     transform: translate(-5%, -50%); /* to center perfectly */
-    z-index: 2; /* to stay on top */
+    z-index: 2; /* to stay on top after clicking */
   }
 
   .nav-links {
+    flex-direction: column;
     position: fixed;
-    background: black;
     width: 100%;
     height: 100vh;
-    flex-direction: column;
+    background: black;
 
     clip-path: circle(100px at 90% -10%); /* give a mask */
-
     /* for better browser support */
     -webkit-clip-path: circle(100px at 90% -10%);
 
     transition: all 1s ease-out;
-    pointer-events: none;
+    pointer-events: none; /* not clickable without opening menu */
   }
 
   /* will toggle this class using JS */
   .nav-links.open {
-    clip-path: circle(100px at 90% -10%);
+    clip-path: circle(1500px at 90% -10%);
     -webkit-clip-path: circle(1500px at 90% -10%);
     pointer-events: all;
-  }
-  .landing {
-    flex-direction: column;
   }
 
   .nav-links li {
@@ -100,14 +96,17 @@ nav {
   }
 
   .nav-links li:nth-child(1) {
-    transition: all 0.5s ease 0.2s;
+    transition: all 0.5s ease 0.3s;
   }
+
   .nav-links li:nth-child(2) {
-    transition: all 0.5s ease 0.4s;
-  }
-  .nav-links li:nth-child(3) {
     transition: all 0.5s ease 0.6s;
   }
+
+  .nav-links li:nth-child(3) {
+    transition: all 0.5s ease 0.9s;
+  }
+
   li.fade {
     opacity: 1;
   }
